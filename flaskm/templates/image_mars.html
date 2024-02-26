@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+    <div class="conteainer-fluid mx=5 text-center">
+        <h1>Жди нас, Марс!</h1>
+        <img src="{{ url_for('static', filename='/img/img.png') }}" class="img-fluid" alt="Не прогрузилось">
+        <h4>Вот она какая, красивая планета</h4>
+    </div>
+{% endblock main %}

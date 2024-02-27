@@ -14,6 +14,6 @@ def image_mars_last():
     return render_template("image_mars_last.html")
 
 
-@bp_users.route("/image_mars")
+@bp_users.route("/promotion_image")
 def image_mars():
-    return render_template("image_mars.html")
+    return render_template("promotion_image.html")

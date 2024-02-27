@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+        <div class="conteainer-fluid mx=5 text-center">
+            <h1 class="h1_red">Жди нас, Марс!</h1>
+            <img src="{{ url_for('static', filename='/img/img.png') }}" class="img-fluid" alt="Не прогрузилось">
+        </div>
+        <div class="container-fluid mx=5 w-50 justify-content-center">
+            <h4 class="bg-dark bg-opacity-25">Человечество вырастает из детства.</h4>
+            <h4 class="bg-success bg-opacity-25">Человечеству мала одна планета.</h4>
+            <h4 class="bg-primary bg-opacity-25">Мы сделаем обитаемыми безжизненные пока планеты.</h4>
+            <h4 class="bg-warning bg-opacity-25">И начнем с Марса!</h4>
+            <h4 class="bg-danger bg-opacity-25">Присоединяйся!</h4>
+        </div>
+{% endblock main %}

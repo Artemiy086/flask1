@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div align="center" class="container">
+    <div align="left" class="form p-3 m-5 bg-warning rounded-5 w-50 mw-25" style="min-width: 350px;">
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-5">
+                <input type="text" name="name" id="name" class="form-control" placeholder="Имя">
+                <input type="text" id="lastname" name="lastname" class="form-control"  placeholder="Фамилия">
+            </div>
+            <div class="mb-1">
+                <input type="email" id="email" name="email" class="form-control" placeholder="Адрес электронной почты">
+            </div>
+            <div class="mb-3">
+                <label for="education">Какое у вас образование?</label>
+                <select class="form-select" id="education" name="education">
+                    {% for option in select_option %}
+                        <option value="{{option}}">{{option}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3" id="professions">
+                <label for="professions">Какие у вас есть профессии?</label>
+                {% for i, profession in enumerate(professions) %}
+                    <div class="form-check">
+                        <input class="from-check-input" type="checkbox" id="{{i}}" name="profession">
+                        <label class="from-check-label" for="{{i}}">{{profession}}</label>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="mb-3" id="gender">
+                <label for="gender">Укажите ваш пол</label>
+                {% for key, value in enumerate({'man': 'Мужской', 'woman': 'Женский'}) %}
+                    <div class="form-check">
+                        <input class="from-check-input" type="radio" id="{{key}}" name="gender">
+                        <label class="from-check-label" for="{{key}}">{{value}}</label>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="mb-3">
+                <div class="mb-3">
+                  <label for="textarea" class="form-label">Почему вы хотите принять участие в миссии?</label>
+                  <textarea class="form-control" id="textarea"></textarea>
+                </div>
+            </div>
+           <div class="mb-3">
+                <label for="file" class="form-label">Приложите фотографию</label>
+                <input class="form-control" type="file" id="file">
+            </div>
+           <div>
+                <div class="form-check">
+                    <input class="from-check-input" type="checkbox" id="ready">
+                    <label class="from-check-label" for="ready">Готовы остаться на Марсе?</label>
+                </div>
+           </div>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+{% endblock main %}
+

@@ -5,8 +5,11 @@ def create_app():
 
     load_dotenv()
 
+    ALLOWED_EXTENSIONS = ['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif']
     app = Flask(__name__)
-    app.config.from_mapping(SECRET_KEY=os.environ.get("SECRET_KEY"))
+    app.config.from_mapping(SECRET_KEY=os.environ.get("SECRET_KEY"),
+                            UPLOAD_FOLDER=os.environ.get("UPLOAD_FOLDER"),
+                            ALLOWED_EXTENSIONS=ALLOWED_EXTENSIONS)
 
     from .handlers import bp_users
     app.register_blueprint(bp_users)
